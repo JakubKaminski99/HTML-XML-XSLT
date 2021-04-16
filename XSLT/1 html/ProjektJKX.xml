@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="ProjektJKXs.xsl" type="text/xsl"?>
+<projekcik>
+    <autor>
+        <imie>Jakub</imie>
+        <nazwisko> Kaminski</nazwisko>
+    </autor>
+    <pasja>
+        <strona part="chinczyk">
+        <img source="img/sza.jpg"/><img source="img/plan.jpg"/>
+ 
+            <tekst>
+                Jest to gra planszowa przeznaczona dla dwóch, trzech lub czterech osób (istnieją także plansze dla 5–6 graczy). Gra powstała na podstawie hinduskiej gry pachisi na przełomie
+                1907
+                i 
+                1908
+                 
+                 roku w Niemczech, a jej autorem jest Josef Friedrich Schmidt. 
+            </tekst>
+
+        <data>
+        <rok>1907.06</rok>
+        <rok>1908.05</rok>
+        </data>
+        
+        <nazwy> 
+            <nazw>
+                <nazwa>Hinduska nazwa jest Pachisi </nazwa>
+            </nazw>
+            <nazw>
+                <nazwa>Polska nazwa jest Chinczyk </nazwa>
+            </nazw>
+            <nazw>
+                <nazwa>Angielska nazwa jest Ludo </nazwa>
+            </nazw>
+            <nazw>
+                <nazwa>Niemiecka nazwa jest (w doslownym tlumaczeniu) Czlowieku, nie irytuj sie </nazwa>
+            </nazw>
+        </nazwy>
+
+        <kostka id="1">
+            <ocz>
+                <oczka>1</oczka>
+            </ocz>
+            <ocz>
+                <oczka>2</oczka>
+            </ocz>
+            <ocz>
+                <oczka>3</oczka>
+            </ocz>
+            <ocz>
+                <oczka>4</oczka>
+            </ocz>
+           <ocz>
+                <oczka>5</oczka>
+           </ocz>
+           <ocz>
+                <oczka>6</oczka>
+           </ocz>
+        </kostka>
+        </strona>
+        <strona part="linki">
+            <linki>
+                <link href="https://www.kurnik.pl/chinczyk/"> Strona do grania </link>
+                <link href="https://www.facebook.com/instantgames/1072612402873309/">Gra na fb</link>
+                <link href="https://www.olx.pl/oferty/q-gra-planszowa-chi%C5%84czyk/">Tu można kupić</link>
+            </linki>
+        </strona>
+        <strona part="zasady">
+        <text>Chinczyk jest to nazwa wystepujaca tylko w polskiej wersji tej gry, prawdopodbnie wziela sie ona z faktu, iz gra przybyla z Azji, a owczesnym symbolem orientalizmu byly Chiny</text>
+ 
+        </strona>
+        <cena>
+            <zl>
+                 0.91
+            </zl>
+        </cena>
+
+    </pasja> 
+</projekcik>

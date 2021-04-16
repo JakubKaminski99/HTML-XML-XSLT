@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wstep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="HH.xsd">
+    <projekcik wymagane="tak">
+        <tytul>Chinczyk - Moja Pasja</tytul>
+    </projekcik>
+    <dane>
+        <informacje>
+            <podtemat>Czym jest Chinczyk?</podtemat>
+            <sprostowanie>Chinczyk jest to nazwa wystepujaca tylko w polskiej wersji tej gry, prawdopodbnie wziela sie ona z faktu, iz gra przybyla z Azji, a owczesnym symbolem orientalizmu byly Chiny</sprostowanie>
+            <wyjasnienie>Jest to gra planszowa przeznaczona dla dwóch, trzech lub czterech osób (istnieją także plansze dla 5–6 graczy). Gra powstała na podstawie hinduskiej gry pachisi na przełomie 1907 i 1908 roku w Niemczech, a jej autorem jest Josef Friedrich Schmidt. </wyjasnienie>
+            <nazwy>
+                <nazwa>Hinduska nazwa jest Pachisi </nazwa>
+                <nazwa>Polska nazwa jest Chinczyk </nazwa>
+                <nazwa>Angielska nazwa jest Ludo </nazwa>
+                <nazwa>Niemiecka nazwa jest (w doslownym tlumaczeniu) Czlowieku, nie irytuj sie </nazwa>
+            </nazwy>
+            <twórcaprezentacji>
+                <imie> Jakub </imie>
+                <nazwisko> Kaminski </nazwisko>
+                <miasto> Wejherowo </miasto>
+                <panstwo> Polska </panstwo>
+            </twórcaprezentacji>
+        </informacje>
+        <obrazki skąd="komputer">
+            <img src="obraz1.jpg"/> 
+            <img src="obraz2.jpg"/> 
+            <img src="obraz3.jpg"/> 
+            <img src="obraz4.jpg"/> 
+        </obrazki>
+        <kostka id="1">
+            <podtemat>Ile mozna wyrzucic oczek na kostce do chinczyka?</podtemat>
+            <oczka>1</oczka>
+            <oczka>2</oczka>
+            <oczka>3</oczka>
+            <oczka>4</oczka>
+            <oczka>5</oczka>
+            <oczka>6</oczka>
+        </kostka>
+        <oczkaLista>
+        1 2 3 4 5 6
+        </oczkaLista>
+        <linki źródło="internet">
+            <link src="https://www.kurnik.pl/chinczyk/" />
+            <link src="https://www.facebook.com/instantgames/1072612402873309/" />
+            <link src="https://www.olx.pl/oferty/q-gra-planszowa-chi%C5%84czyk/" />
+        </linki>
+        <zrodla tajne="nie">
+            <strona src="https://en.wikipedia.org/wiki/Ludo_(board_game)"/>
+            <strona src="https://www.rebel.pl/product.php/1,311/184/Chinczyk.html"/>
+        </zrodla>
+    </dane>
+</wstep>
+             
+

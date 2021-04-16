@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="wstep">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="projekcik">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tytul" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="wymagane" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dane">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="informacje">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="podtemat" type="xs:string" />
+                    <xs:element name="sprostowanie" type="xs:string" />
+                    <xs:element name="wyjasnienie" type="xs:string" />
+                    <xs:element name="nazwy">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="nazwa" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="twórcaprezentacji">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="imie" type="xs:string" />
+                          <xs:element name="nazwisko" type="xs:string" />
+                          <xs:element name="miasto" type="xs:string" />
+                          <xs:element name="panstwo" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="obrazki">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="img">
+                      <xs:complexType>
+                        <xs:attribute name="src" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="skąd" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="kostka">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="podtemat" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" name="oczka" type="xs:unsignedByte" />
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="oczkaLista" type="xs:string" />
+              <xs:element name="linki">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="link">
+                      <xs:complexType>
+                        <xs:attribute name="src" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="źródło" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="zrodla">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="strona">
+                      <xs:complexType>
+                        <xs:attribute name="src" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="tajne" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

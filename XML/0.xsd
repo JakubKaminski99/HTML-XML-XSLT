@@ -1,0 +1,10 @@
+  </xs:complexType>
+  <xs:complexType name="daneType">
+    <xs:sequence>
+      <xs:element type="informacjeType" name="informacje"/>
+      <xs:element type="obrazkiType" name="obrazki"/>
+      <xs:element type="kostkaType" name="kostka"/>
+      <xs:element type="linkiType" name="linki"/>
+      <xs:element type="zrodlaType" name="zrodla"/>
+    </xs:sequence>
+  </xs:complexType>

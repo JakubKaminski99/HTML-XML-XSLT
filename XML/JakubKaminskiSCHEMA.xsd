@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="wstep">
+	    <xs:complexType>
+		    <xs:sequence>
+		    	<xs:element name="projekcik" type="projekcikType" minOccurs="0"/>
+			    <xs:element name="dane" type="daneType" minOccurs="0"/>
+		    </xs:sequence>
+	    </xs:complexType>
+    </xs:element>
+
+  <xs:simpleType name="tekstStringType" >
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="999" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="danaStringType" >
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+<xs:simpleType name="oczkaType">
+    <xs:list itemType="unia"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="unia">
+    <xs:union memberTypes="iloscliczb zakres"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="iloscliczb" >
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+   <xs:simpleType name="zakres">
+    <xs:restriction base="xs:int">
+      <xs:maxInclusive value="6"/>
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="projekcikType">
+    <xs:sequence>
+    	<xs:element name="tytul" type="tekstStringType" minOccurs="0" maxOccurs="unbounded" />
+	  </xs:sequence>
+    <xs:attribute name="wymagane" default="nie">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="tak|nie"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="daneType" >
+	  <xs:sequence>
+		  <xs:element name="informacje" type="informacjeType" minOccurs="0"/>
+		  <xs:element name="obrazki" type="obrazkiType" minOccurs="0" />
+		  <xs:element name="kostka" type="kostkaType" minOccurs="0"/>
+      <xs:element name="oczkaLista" type="oczkaType" minOccurs="0" />
+		  <xs:element name="linki" type="linkiType" minOccurs="0"/>
+		  <xs:element name="zrodla" type="zrodlaType" minOccurs="0" />   
+	  </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="informacjeType">
+      <xs:sequence>
+          <xs:element name="podtemat" type="danaStringType" minOccurs="0" />
+          <xs:element ref="sprostowanie"/>
+          <xs:element name="wyjasnienie" type="tekstStringType" minOccurs="0" />
+          <xs:element name="nazwy" type="nazwyType" minOccurs="0" />
+          <xs:element name="twórcaprezentacji" type="tworcaType" minOccurs="0" />
+      </xs:sequence>
+  </xs:complexType>
+
+<xs:element name="sprostowanie" type="tekstStringType"/>
+
+<xs:complexType name="nazwyType">
+    <xs:sequence>
+      <xs:element name="nazwa" type="tekstStringType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="języki">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:group name="miastopanstwo">
+    <xs:sequence>
+      <xs:element name="miasto" type="xs:string"/>
+      <xs:element name="panstwo" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:complexType name="imienazwisko">
+    <xs:sequence>
+      <xs:element name="imie" type="xs:string"/>
+      <xs:element name="nazwisko" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tworcaType">
+    <xs:complexContent>
+      <xs:extension base="imienazwisko">
+    <xs:sequence>
+      <xs:group ref="miastopanstwo"/>
+    </xs:sequence>
+    </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:attribute name="src" type="xs:anyURI"/>
+
+	<xs:complexType name="obrazkiType" >
+        <xs:sequence>
+            <xs:element name="img" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute ref="src"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    <xs:attribute name="skąd">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    </xs:complexType>
+
+   <xs:complexType name="kostkaType">
+    <xs:sequence>
+      <xs:element name="podtemat" type="tekstStringType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="oczka" type="danaStringType" minOccurs="1" maxOccurs="6"/>
+    </xs:sequence>
+    <xs:attribute name="id">
+      <xs:simpleType>
+        <xs:restriction base="xs:byte">
+          <xs:enumeration value="1" />
+          <xs:enumeration value="2" />   
+          <xs:enumeration value="3" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="linkiType">
+    <xs:sequence>
+      <xs:element name="link" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType mixed="true">
+          <xs:attribute ref="src"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="źródło">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+ 
+ <xs:complexType name="zrodlaType">
+    <xs:sequence>
+      <xs:element name="strona" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType mixed="true">
+          <xs:attribute ref="src"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="tajne" default="nie">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="tak|nie"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>
